@@ -1,4 +1,4 @@
-﻿namespace POSFrontendBlazor.Models
+﻿namespace POSFrontendBlazor.Models.ProductCategory
 {
     public class ProductCategoryDataModel
     {

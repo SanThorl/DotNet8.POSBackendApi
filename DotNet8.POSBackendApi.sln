@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POSBackendApi.Models", "POS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POSBackendApi", "POSBackendApi\POSBackendApi.csproj", "{B82DBF47-2502-492E-AFB3-15505B5D594A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSBackendApi.DbServices", "POSBackendApi.DbServices\POSBackendApi.DbServices.csproj", "{E6501B62-495E-40DD-8E58-DBD9B0FCF3BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POSBackendApi.DbServices", "POSBackendApi.DbServices\POSBackendApi.DbServices.csproj", "{E6501B62-495E-40DD-8E58-DBD9B0FCF3BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
