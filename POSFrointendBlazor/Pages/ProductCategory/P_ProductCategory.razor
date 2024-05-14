@@ -7,7 +7,8 @@
 </MudText>
 
 @if(ResponseModel is not null){
-<MudSimpleTable Style="overflow-x: auto;">
+    int count = 0;
+    <MudSimpleTable Style="overflow-x: auto;">
     <thead>
         <tr>
             <td>No.</td>
@@ -19,7 +20,8 @@
         @foreach (var item in ResponseModel.Data.ProductCategory)
         {
             <tr>
-                <td>@(++count) + ((pageNo - 1) * pageSize) (</td>
+                <td>++count</td>
+                @* <td>@(++count) + ((pageNo - 1) * pageSize) (</td> *@
                 <td>@item.ProductCategoryCode</td>
                 <td>@item.ProductCategoryName</td>
             </tr>
@@ -30,13 +32,13 @@
 }
 @code {
     private ProductCategoryListResponseModel ResponseModel;
-    private int pageNo = 1;
-    private int pageSize = 10;
+    // private int pageNo = 1;
+    // private int pageSize = 10;
 
     protected override async Task OnInitializedAsync()
     {
-        //ResponseModel = await HttpClientService.ExecuteAsync<ProductCategoryListResponseModel>(Endpoits.ProductCategory, EnumHttpMethod.Get);
-        await List();
+        ResponseModel = await HttpClientService.ExecuteAsync<ProductCategoryListResponseModel>(Endpoits.ProductCategory, EnumHttpMethod.Get);
+        //await List();
     }
 
     private async Task List()

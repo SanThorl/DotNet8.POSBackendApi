@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace POSBackendApi.DbServices
+namespace POSBackendApi.DbServices.Models
 {
     public partial class TblProductCategory
     {

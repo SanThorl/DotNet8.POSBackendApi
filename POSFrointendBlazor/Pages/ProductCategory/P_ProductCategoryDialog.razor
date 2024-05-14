@@ -1,5 +1,31 @@
-﻿<h3>P_ProductCategoryDialog</h3>
+﻿<MudDialog>
+    <TitleContent>
+        <MudText Typo="Typo.h6">
+            <MudIcon Icon="@Icons.Material.Add" Class="mr-3 mb-n1"/>
+            Delete server?
+        </MudText>
+    </TitleContent>
+    <DialogContent>
+        <MudTextField Value="@reqModel.ProductCategoryCode" Label="Code" />
+        <MudTextField Value="@reqModel.ProductCategoryName" Label="Namee" />
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        <MudButton Color="Color.Success" OnClick="Save">Save</MudButton>
+    </DialogActions>
+</MudDialog>
 
 @code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+    private ProductCategoryRequestModel reqModel = new();
 
+    private void Cancel()
+    {
+        MudDialog.Cancel();
+    }
+
+    private void Save()
+    {
+        
+    }
 }
