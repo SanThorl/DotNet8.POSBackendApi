@@ -1,4 +1,7 @@
-﻿namespace POSBackendApi.Features.ProductCategory
+﻿using Microsoft.EntityFrameworkCore;
+using POSFrontendBlazor.Models.ProductCategory;
+
+namespace POSBackendApi.Features.ProductCategory
 {
     public class DL_ProductCategory
     {
@@ -9,6 +12,15 @@
             _context = context;
         }
 
-        public async Task<ProductCategoryList>
+        public async Task<ProductCategoryListResponseModel> GetProductCategory()
+        {
+            var responseModel = new ProductCategoryListResponseModel();
+            try
+            {
+                var lst = await _context.TblProductCategories.AsNoTracking().ToListAsync();
+
+                responseModel.DataList(lst)
+            }
+        }
     }
 }

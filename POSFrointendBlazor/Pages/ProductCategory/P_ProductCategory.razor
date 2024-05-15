@@ -1,4 +1,5 @@
 ﻿@page "/product-category"
+@using MudBlazor
 
 <MudText Typo = "Typo-h6">
     <MudIconButton Icon="@Icons.Material.Filled.Add" Color="Color.Secondary" aria-label="Create" onClick ="Popup">
@@ -20,15 +21,14 @@
         @foreach (var item in ResponseModel.Data.ProductCategory)
         {
             <tr>
-                <td>++count</td>
-                @* <td>@(++count) + ((pageNo - 1) * pageSize) (</td> *@
+                <td>@(++count)</td>
                 <td>@item.ProductCategoryCode</td>
                 <td>@item.ProductCategoryName</td>
             </tr>
         }
     </tbody>
 </MudSimpleTable>
-<MudPagination SelectedChanged ="PageChanged" Count="@ResponseModel.PageSetting.PageCount" Class ="pa-4"/>
+//<MudPagination SelectedChanged ="PageChanged" Count="@ResponseModel.PageSetting.PageCount" Class ="pa-4"/>
 }
 @code {
     private ProductCategoryListResponseModel ResponseModel;
@@ -37,22 +37,35 @@
 
     protected override async Task OnInitializedAsync()
     {
-        ResponseModel = await HttpClientService.ExecuteAsync<ProductCategoryListResponseModel>(Endpoits.ProductCategory, EnumHttpMethod.Get);
-        //await List();
+        await List();
     }
 
     private async Task List()
     {
-        ResponseModel = await HttpClientService.ExecuteAsync<ProductCategoryListResponseModel>
-        (
-            Endpoints.ProductCategory.WithPagination(pageNo, pageSize),
-            EnumHttpMethod.Get
-    );
+        ResponseModel = await HttpClientService.ExecuteAsync<ProductCategoryListResponseModel>(Endpoits.ProductCategory, EnumHttpMethod.Get);
+
+        //     ResponseModel = await HttpClientService.ExecuteAsync<ProductCategoryListResponseModel>
+        //     (
+        //         Endpoints.ProductCategory.WithPagination(pageNo, pageSize),
+        //         EnumHttpMethod.Get
+        // );
     }
 
-    private async Task PageChanged(int i)
+    // private async Task PageChanged(int i)
+    // {
+    //     pageNo = i;
+    //     await List();
+    // }
+    private async Task Popup()
     {
-        pageNo = i;
-        await List();
+
+        var dialog = await DialogService.ShowAsync<P_ProductCategoryDialog>("New Product Category");
+        var result = await dialog.Result;
+
+        if (!result.Canceled)
+        {
+            await List();
+        }
+
     }
 }

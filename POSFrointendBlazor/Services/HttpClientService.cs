@@ -4,11 +4,11 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace POSFrontendBlazor.Services;
 
-public class HttpClientServices
+public class HttpClientService
 {
     private readonly HttpClient _httpClient;
 
-    public HttpClientServices(HttpClient httpClient)
+    public HttpClientService(HttpClient httpClient)
     {
         _httpClient = httpClient;
     }
