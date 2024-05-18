@@ -22,9 +22,10 @@ public partial class P_ProductCategoryDialog
 
         if (response.IsError)
         {
+            InjectService.ShowMessage(response.Message, EnumResponseType.Error);
             return;
         }
-
+        InjectService.ShowMessage(response.Message, EnumResponseType.Success);
         MudDialog.Close();
     }
 }

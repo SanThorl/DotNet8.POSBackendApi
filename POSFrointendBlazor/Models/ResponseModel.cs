@@ -6,6 +6,7 @@
         public int Result { get; set; }
         public string Message { get; set; }
         public bool IsSuccess { get; set; }
-        public bool IsError { get { return !IsSuccess; } }
+        //public bool IsError { get { return !IsSuccess; } }
+        public bool IsError => !IsSuccess;
     }
 }

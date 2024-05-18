@@ -2,8 +2,7 @@
 {
     public class ProductCategoryListResponseModel : ResponseModel
     {
-        public List<ProductCategoryModel> Item { get; set; }
-
-
+        public ProductCategoryDataModel Data { get; set; }
+        public PageSetting PageSetting { get; set; }
     }
 }

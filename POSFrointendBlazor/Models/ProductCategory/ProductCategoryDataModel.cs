@@ -2,6 +2,6 @@
 {
     public class ProductCategoryDataModel
     {
-        public List<ProductCategoryDataModel> ProductCategory { get; set; }
+        public List<ProductCategoryModel> ProductCategory { get; set; }
     }
 }
