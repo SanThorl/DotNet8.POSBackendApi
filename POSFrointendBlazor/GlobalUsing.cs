@@ -6,3 +6,6 @@ global using System.Text.Json.Serialization;
 global using Microsoft.AspNetCore.Components;
 global using POSFrontendBlazor.Models.ProductCategory;
 global using POSFrontendBlazor.Services;
+global using Microsoft.AspNetCore.Components.Web;
+global using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+global using POSFrontendBlazor;

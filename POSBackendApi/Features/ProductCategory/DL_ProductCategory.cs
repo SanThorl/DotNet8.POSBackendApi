@@ -19,7 +19,11 @@ namespace POSBackendApi.Features.ProductCategory
             {
                 var lst = await _context.TblProductCategories.AsNoTracking().ToListAsync();
 
-                responseModel.DataList(lst)
+                responseModel.DataList(lst);
+            }
+            catch(Exception ex)
+            {
+                return ex.InternalServer();
             }
         }
     }

@@ -20,6 +20,6 @@ public class BL_ProductCategory
 
     public async Task<ProductCategoryListResponseModel> GetProductCategory(int pageNo, int pageSize)
     {
-        return await _productCategory.GetProductCategory(pageNo, pageSize);
+        return await _productCategory.GetProductCategories(pageNo, pageSize);
     }
 } 

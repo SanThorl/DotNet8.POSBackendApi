@@ -10,7 +10,8 @@ namespace POSBackendApi.Models;
 
 public static class ChangeModel
 {
-    public static ProductCategoryModel Change(this TblProduct Category dataModel)
+    #region Product Category
+    public static ProductCategoryModel Change(this TblProductCategory dataModel)
     {
         var model = new ProductCategoryModel()
         {
@@ -20,5 +21,16 @@ public static class ChangeModel
         };
         return model;
     }
+
+    public static TblProductCategory Change(this ProductCategoryModel dataModel)
+    {
+        var model = new TblProductCategory() {
+            ProductCategoryId = dataModel.ProductCategoryId,
+            ProductCategoryCode= dataModel.ProductCategoryCode,
+            ProductCategoryName = dataModel.ProductCategoryName
+        };
+        return model;
+    }
+    #endregion
 }
 
