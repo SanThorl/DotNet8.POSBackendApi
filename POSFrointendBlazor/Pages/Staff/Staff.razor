@@ -42,10 +42,18 @@
 
 @code {
     private StaffListResponseModel ResponseModel;
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+
+    protected override async Task OnInitializedAsync()
     {
         await List();
-        //return base.OnAfterRenderAsync(firstRender);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await InjectService.DisableLoading();
+        }
     }
 
     private async Task List()

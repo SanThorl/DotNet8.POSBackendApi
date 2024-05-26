@@ -9,3 +9,5 @@ global using POSFrontendBlazor.Services;
 global using Microsoft.AspNetCore.Components.Web;
 global using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 global using POSFrontendBlazor;
+global using Radzen.Blazor;
+global using Radzen;

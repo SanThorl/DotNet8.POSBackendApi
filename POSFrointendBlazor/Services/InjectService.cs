@@ -1,8 +1,11 @@
-﻿namespace POSFrontendBlazor.Services;
+﻿using Microsoft.JSInterop;
+
+namespace POSFrontendBlazor.Services;
 
 public class InjectService
 {
     private readonly ISnackbar _snackbar;
+    private readonly JSRuntime _jsRuntime;
 
     public InjectService(ISnackbar snackbar)
     {
@@ -28,6 +31,16 @@ public class InjectService
             default:
                 break;
         }
+    }
+
+    public async Task EnableLoading()
+    {
+        await _jsRuntime.InvokeVoidAsync("enableLoading", true);
+    }
+
+    public async Task DisableLoading()
+    {
+        await _jsRuntime.InvokeVoidAsync("enableLoading", false);
     }
 }
 public enum EnumResponseType

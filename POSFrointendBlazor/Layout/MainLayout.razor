@@ -1,5 +1,5 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
+@* <div class="page">
     <div class="sidebar">
         <NavMenu />
     </div>
@@ -13,4 +13,39 @@
             @Body
         </article>
     </main>
-</div>
+</div> *@
+
+<MudPaper Height="900px" Style="overflow:hidden; position:relative;">
+    <MudDrawerContainer Class="mud-height-full">
+        <MudDrawer @bind-Open="open" Elevation="0" Variant="@DrawerVariant.Persistent" Color="Color.Default">
+            <MudDrawerHeader>
+                <MudText Typo="Typo.h6">POS</MudText>
+            </MudDrawerHeader>
+            <MudNavMenu Dense="true" Rounded="true" Margin="Margin.Dense" Color="Color.Success" Class="pa-2">
+                <MudNavLink Match="NavLinkMatch.All" OnClick="@(() => MenuClick("/"))" Href="/" Icon="@Icons.Material.Filled.Dashboard">Dashboard</MudNavLink>
+                <MudNavLink Match="NavLinkMatch.All" Href="/product-category" Icon="@Icons.Material.Filled.Category">Product Category</MudNavLink>
+                <MudNavLink Match="NavLinkMatch.All" Href="/staff" Icon="@Icons.Material.Filled.Person4">Staffs</MudNavLink>
+            </MudNavMenu>
+        </MudDrawer>
+        <div class="d-flex mud-height-full">
+            <MudContainer MaxWidth="MaxWidth.Large" Class="ma-4">
+                @Body
+            </MudContainer>
+        </div>
+    </MudDrawerContainer>
+</MudPaper>
+
+@code{
+    bool open = true;
+    private async Task MenuClick(string url)
+    {
+        await InjectService.EnableLoading();
+        Nav.NavigateTo(url);
+    }
+}
+
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<RadzenComponents />
