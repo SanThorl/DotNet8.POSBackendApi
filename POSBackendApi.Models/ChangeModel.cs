@@ -1,10 +1,6 @@
 ﻿using POSBackendApi.DbServices.Models;
 using POSBackendApi.Models.Setup.ProductCategory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using POSBackendApi.Models.Setup.Staff;
 
 namespace POSBackendApi.Models;
 
@@ -30,6 +26,42 @@ public static class ChangeModel
             ProductCategoryName = dataModel.ProductCategoryName
         };
         return model;
+    }
+    #endregion
+
+    #region
+    public static StaffModel Change(this TblStaff dataModel)
+    {
+        var staffModel = new StaffModel()
+        {
+            StaffId = dataModel.StaffId,
+            StaffCode = dataModel.StaffCode,
+            StaffName = dataModel.StaffName,
+            DateOfBirth = dataModel.DateOfBirth,
+            MobileNo = dataModel.MobileNo,
+            Address = dataModel.Address,
+            Gender = dataModel.Gender,
+            Position = dataModel.Position,
+            Password = dataModel.Password
+        };
+        return staffModel;
+    }
+
+    public static TblStaff Change(this StaffModel dataModel)
+    {
+        var staffModel = new TblStaff()
+        {
+            StaffId = dataModel.StaffId,
+            StaffCode = dataModel.StaffCode,
+            StaffName = dataModel.StaffName,
+            DateOfBirth = dataModel.DateOfBirth,
+            MobileNo = dataModel.MobileNo,
+            Address = dataModel.Address,
+            Gender = dataModel.Gender,
+            Position = dataModel.Position,
+            Password = dataModel.Password
+        };
+        return staffModel;
     }
     #endregion
 }

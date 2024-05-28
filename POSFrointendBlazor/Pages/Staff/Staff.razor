@@ -78,14 +78,21 @@
     private async Task Popup()
     {
         //DialogOptions maxWidth = new DialogOptions() { MaxWidth = MaxWidth.Medium, FullWidth = true };
-        MudBlazor.DialogOptions maxWidth = new MudBlazor.DialogOptions()
-            {
-                MaxWidth = MaxWidth.Small,
-                FullWidth = true,
-                DisableBackdropClick = true,
-                CloseOnEscapeKey = false
-            };
-        var dialog = await DialogService.ShowAsync<>("", maxWidth);
-        var result = await dialog.Result;
+        // MudBlazor.DialogOptions maxWidth = new MudBlazor.DialogOptions()
+        //     {
+        //         MaxWidth = MaxWidth.Small,
+        //         FullWidth = true,
+        //         DisableBackdropClick = true,
+        //         CloseOnEscapeKey = false
+        //     };
+        // var dialog = await DialogService.ShowAsync<StaffDialog>("New Staff", maxWidth);
+        // var result = await dialog.Result;
+
+        var result = await InjectService.ShowModelBoxAsync<StaffDialog>("New Staff");
+
+        if (!result.Cancelled)
+        {
+            await List();
+        }
     }
 }

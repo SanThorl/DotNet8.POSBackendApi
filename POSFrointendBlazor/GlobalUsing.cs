@@ -11,3 +11,8 @@ global using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 global using POSFrontendBlazor;
 global using Radzen.Blazor;
 global using Radzen;
+global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
