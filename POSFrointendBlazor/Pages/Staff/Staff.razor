@@ -45,13 +45,16 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await List();
+        //await List();
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
+            await InjectService.EnableLoading();
+            await List();
+            StateHasChanged();
             await InjectService.DisableLoading();
         }
     }
