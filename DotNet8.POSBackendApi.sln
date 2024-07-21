@@ -11,6 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POSBackendApi", "POSBackend
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POSBackendApi.DbServices", "POSBackendApi.DbServices\POSBackendApi.DbServices.csproj", "{E6501B62-495E-40DD-8E58-DBD9B0FCF3BC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{F557642E-7540-49E4-95F2-DABF73739957}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSBackendApi.Shared", "POSBackendApi.Shared\POSBackendApi.Shared.csproj", "{CBF6697B-9743-4F45-94D0-D032D8A84323}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{7F3FCE8B-F421-4B13-AD61-2EFC96D4C9F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +39,19 @@ Global
 		{E6501B62-495E-40DD-8E58-DBD9B0FCF3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6501B62-495E-40DD-8E58-DBD9B0FCF3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6501B62-495E-40DD-8E58-DBD9B0FCF3BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF6697B-9743-4F45-94D0-D032D8A84323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF6697B-9743-4F45-94D0-D032D8A84323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF6697B-9743-4F45-94D0-D032D8A84323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF6697B-9743-4F45-94D0-D032D8A84323}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B8A39A71-2A8D-4F43-8B90-0774C697C5F0} = {F557642E-7540-49E4-95F2-DABF73739957}
+		{B82DBF47-2502-492E-AFB3-15505B5D594A} = {7F3FCE8B-F421-4B13-AD61-2EFC96D4C9F2}
+		{E6501B62-495E-40DD-8E58-DBD9B0FCF3BC} = {7F3FCE8B-F421-4B13-AD61-2EFC96D4C9F2}
+		{CBF6697B-9743-4F45-94D0-D032D8A84323} = {F557642E-7540-49E4-95F2-DABF73739957}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4665C8F0-4D1E-4FEA-AD67-6148668B4088}
